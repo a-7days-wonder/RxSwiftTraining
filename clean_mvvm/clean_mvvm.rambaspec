@@ -1,0 +1,28 @@
+# Template information section
+name: clean_mvvm
+summary: MVVM with Clean Architecture
+author: Shumpei Nagata
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+# View
+- {name: View/ViewController.swift, path: Code/View/ViewController.swift.liquid}
+- {name: View/ViewController.xib, path: Code/View/ViewController.xib.liquid}
+
+# ViewModel
+- {name: ViewModel/ViewModel.swift, path: Code/ViewModel/ViewModel.swift.liquid}
+
+# Builder
+- {name: Builder/Builder.swift, path: Code/Builder/Builder.swift.liquid}
+
+# Wireframe
+- {name: Wireframe/Wireframe.swift, path: Code/Wireframe/Wireframe.swift.liquid}
+
+# Template dependencies
+dependencies:
+- RxSwift
+- RxCocoa
+- RxRelay
+- MySwiftExtensions

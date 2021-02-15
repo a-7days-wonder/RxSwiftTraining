@@ -1,0 +1,20 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Domain
+import MySwiftExtensions
+
+enum {{ module_info.name }}Builder {
+    static func build() -> {{ module_info.name }}ViewController {
+        let view = {{ module_info.name }}ViewController.ex.instantiate()
+        let wireframe = {{ module_info.name }}Wireframe(view: view)
+        let viewModel = {{ module_info.name }}ViewModel(wireframe: wireframe)
+        view.inject(viewModel: viewModel)
+        return view
+    }
+}

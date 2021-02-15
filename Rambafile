@@ -1,0 +1,20 @@
+### Headers settings
+company: Shumpei Nagata
+
+### Xcode project settings
+project_name: RxSwiftTraining
+xcodeproj_path: RxSwiftTraining.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Presentation
+
+# The file path for new modules
+project_file_path: Presentation/Modules
+
+# The Xcode group path to new modules
+project_group_path: Presentation/Modules
+
+### Templates
+templates:
+- {name: clean_mvvm, local: "clean_mvvm"}

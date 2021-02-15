@@ -1,0 +1,41 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Domain
+import RxSwift
+
+protocol {{ module_info.name }}ViewModelProtocol {
+    var input: {{ module_info.name }}ViewModelInputProtocol { get }
+    var output: {{ module_info.name }}ViewModelOutputProtocol { get }
+}
+
+protocol {{ module_info.name }}ViewModelInputProtocol {
+}
+
+protocol {{ module_info.name }}ViewModelOutputProtocol {
+}
+
+final class {{ module_info.name }}ViewModel: {{ module_info.name }}ViewModelProtocol {
+    private let wireframe: {{ module_info.name }}WireframeProtocol
+    let input: {{ module_info.name }}ViewModelInputProtocol
+    let output: {{ module_info.name }}ViewModelOutputProtocol
+
+    init<Wireframe: {{ module_info.name }}WireframeProtocol>(wireframe: Wireframe) {
+        self.wireframe = wireframe
+        input = Input()
+        output = Output()
+    }
+}
+
+extension {{ module_info.name }}ViewModel {
+    private struct Input: {{ module_info.name }}ViewModelInputProtocol {
+    }
+
+    private struct Output: {{ module_info.name }}ViewModelOutputProtocol {
+    }
+}

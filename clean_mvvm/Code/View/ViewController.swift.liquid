@@ -1,0 +1,35 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Domain
+import RxCocoa
+import RxSwift
+import UIKit
+
+final class {{ module_info.name }}ViewController: UIViewController {
+    private var viewModel: {{ module_info.name }}ViewModelProtocol!
+    private let disposeBag = RxSwift.DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        bindInput()
+        bindOutput()
+    }
+
+    func inject<ViewModel: {{ module_info.name }}ViewModelProtocol>(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
+}
+
+extension {{ module_info.name }}ViewController {
+    private func bindInput() {
+    }
+
+    private func bindOutput() {
+    }
+}

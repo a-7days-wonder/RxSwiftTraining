@@ -1,0 +1,23 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol {{ module_info.name }}WireframeProtocol {
+}
+
+final class {{ module_info.name }}Wireframe {
+    private weak var view: {{ module_info.name }}ViewController?
+
+    init(view: {{ module_info.name }}ViewController) {
+        self.view = view
+    }
+}
+
+extension {{ module_info.name }}Wireframe: {{ module_info.name }}WireframeProtocol {
+}
