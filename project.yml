@@ -26,7 +26,7 @@ targets:
   RxSwiftTraining:
     type: application
     platform: iOS
-    sources: RxSwiftTraining
+    sources: [RxSwiftTraining]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.shumpei.nagata.RxSwiftTraining
@@ -37,7 +37,7 @@ targets:
   DataStore:
     type: framework
     platform: iOS
-    sources: DataStore
+    sources: [DataStore]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.shumpei.nagata.RxSwiftTraining.DataStore
@@ -45,27 +45,25 @@ targets:
     dependencies:
       - package: Alamofire
       - package: RxSwift
-        product:
-          - RxRelay
-          - RxSwift
+        product: RxRelay
+      - package: RxSwift
   Domain:
     type: framework
     platform: iOS
-    sources: Domain
+    sources: [Domain]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.shumpei.nagata.RxSwiftTraining.Domain
         CODE_SIGN_STYLE: Automatic
     dependencies:
       - package: RxSwift
-        product:
-          - RxRelay
-          - RxSwift
+        product: RxRelay
+      - package: RxSwift
       - target: DataStore
   Presentation:
     type: framework
     platform: iOS
-    sources: Presentation
+    sources: [Presentation]
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.shumpei.nagata.RxSwiftTraining.Presentation
@@ -73,10 +71,10 @@ targets:
     dependencies:
       - package: MySwiftExtensions
       - package: RxSwift
-        product: 
-          - RxCocoa
-          - RxRelay
-          - RxSwift
+        product: RxCocoa
+      - package: RxSwift
+        product: RxRelay
+      - package: RxSwift
       - target: Domain
 
 schemes:
