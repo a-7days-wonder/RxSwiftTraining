@@ -34,6 +34,16 @@ targets:
       - target: DataStore
       - target: Domain
       - target: Presentation
+    preBuildScripts:
+      - script: |
+          # NOTE: Apple Silicon Macでのインストール先なので、Intel Macだとダメかも
+          if which /opt/homebrew/bin/swiftlint >/dev/null; then
+            /opt/homebrew/bin/swiftlint autocorrect --format
+            /opt/homebrew/bin/swiftlint
+          else
+            echo "warning: SwiftLint is not installed. Please install SwiftLint with Homebrew."
+          fi
+        name: SwiftLint
   DataStore:
     type: framework
     platform: iOS
