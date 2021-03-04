@@ -17,10 +17,10 @@ public final class TestViewController: UIViewController {
 
     @IBOutlet private weak var label: UILabel!
     @IBOutlet private weak var button: UIButton!
-    
+
     // NOTE: BehaviorRelayとはなんなんだ Observableとはどう違う?
     private let count: RxRelay.BehaviorRelay<Int> = .init(value: 0)
-    
+
     public override func viewDidLoad() {
         super.viewDidLoad()
         bindInput()
