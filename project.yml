@@ -35,13 +35,18 @@ targets:
     preBuildScripts:
       - script: |
           # NOTE: Apple Silicon Macでのインストール先なので、Intel Macだとダメかも
-          if which /opt/homebrew/bin/swiftlint >/dev/null; then
+          if which /opt/homebrew/bin/swiftlint > /dev/null; then
             /opt/homebrew/bin/swiftlint autocorrect --format
             /opt/homebrew/bin/swiftlint
           else
             echo "warning: SwiftLint is not installed. Please install SwiftLint with Homebrew."
           fi
         name: SwiftLint
+      - script: |
+          if which /opt/homebrew/bin/license-plist > /dev/null; then
+            /opt/homebrew/bin/license-plist --output-path ${SRCROOT}/Application/Settings.bundle
+          fi
+        name: LicensePlist
   DataStore:
     type: library.static # Domainからしか依存されない・Bundleを持たない
     platform: iOS
