@@ -48,7 +48,7 @@ targets:
           fi
         name: LicensePlist
   DataStore:
-    type: library.static # Domainからしか依存されない・Bundleを持たない
+    type: framework.static # Domainからしか依存されない
     platform: iOS
     sources: [DataStore]
     settings:
@@ -59,7 +59,7 @@ targets:
       - package: Alamofire
       - target: Umbrella
   Domain:
-    type: library.static # Presentationからしか依存されない・Bundleを持たない
+    type: framework.static # Presentationからしか依存されない
     platform: iOS
     sources: [Domain]
     settings:
