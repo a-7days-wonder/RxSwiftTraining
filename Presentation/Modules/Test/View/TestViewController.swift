@@ -42,10 +42,8 @@ extension TestViewController {
     }
 
     private func bindOutput() {
-        count.asObservable()
-            .subscribe(onNext: { [weak self] count in
-                self?.label.text = count.description
-            })
+        count.map(\.description)
+            .bind(to: label.rx.text)
             .disposed(by: disposeBag)
     }
 }
