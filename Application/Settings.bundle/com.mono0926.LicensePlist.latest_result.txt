@@ -1,3 +1,9 @@
+name: LicensePlist, nameSpecified: , owner: mono0926, version: 
+
+name: SwiftLint, nameSpecified: , owner: realm, version: 
+
+name: xcodegen, nameSpecified: , owner: yonaskolb, version: 
+
 name: Alamofire, nameSpecified: Alamofire, owner: Alamofire, version: 5.4.1
 
 name: MySwiftExtensions, nameSpecified: MySwiftExtensions, owner: a-7days-wonder, version: 0.0.2
@@ -6,4 +12,4 @@ name: RxSwift, nameSpecified: RxSwift, owner: ReactiveX, version: 6.1.0
 
 add-version-numbers: false
 
-LicensePlist Version: 3.0.5
+LicensePlist Version: 3.0.7

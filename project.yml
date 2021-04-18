@@ -34,17 +34,20 @@ targets:
       - target: Umbrella
     preBuildScripts:
       - script: |
+          source ~/.zshrc
           # NOTE: Apple Silicon Macでのインストール先なので、Intel Macだとダメかも
-          if which /opt/homebrew/bin/swiftlint > /dev/null; then
-            /opt/homebrew/bin/swiftlint autocorrect --format
-            /opt/homebrew/bin/swiftlint
+          if which /opt/homebrew/bin/mint > /dev/null; then
+            xcrun --sdk macosx /opt/homebrew/bin/mint run swiftlint autocorrect --format
+            xcrun --sdk macosx /opt/homebrew/bin/mint run swiftlint
           else
-            echo "warning: SwiftLint is not installed. Please install SwiftLint with Homebrew."
+            echo "warning: SwiftLint is not installed. Please install SwiftLint with Mint."
           fi
         name: SwiftLint
       - script: |
-          if which /opt/homebrew/bin/license-plist > /dev/null; then
-            /opt/homebrew/bin/license-plist --output-path ${SRCROOT}/Application/Settings.bundle
+          source ~/.zshrc
+          # NOTE: Apple Silicon Macでのインストール先なので、Intel Macだとダメかも
+          if which /opt/homebrew/bin/mint > /dev/null; then
+            xcrun --sdk macosx /opt/homebrew/bin/mint run LicensePlist license-plist --output-path ${SRCROOT}/Application/Settings.bundle
           fi
         name: LicensePlist
   DataStore:
